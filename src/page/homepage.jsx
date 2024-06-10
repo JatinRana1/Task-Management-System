@@ -42,7 +42,7 @@ const Homepage = () => {
                       <p className="lead fw-bold mb-0 text-center">Deadline</p>
                     </div>
                     <div className="task-item">
-                      <p className="lead fw-bold mb-0 text-center">Created Date</p>
+                      <p className="lead fw-bold mb-0 text-center">Created at</p>
                     </div>
                     <div className="task-item">
                       <p className="lead fw-bold mb-0 text-center">Actions</p>
@@ -60,7 +60,7 @@ const Homepage = () => {
                         </p>
                       </div>
                       <div className="task-item task-status">
-                        <p className="fs-6 mb-0">{data.status}</p>
+                        <p className="fs-6 mb-0" style={{color: data.status === "Completed" ? "green" : data.status === "In Progress" ? "orange" : "red" }}>{data.status}</p>
                       </div>
                       <div className="task-item task-deadline">
                         <div className="py-2 px-3 me-2 border border-warning rounded-3 d-flex align-items-center bg-body-tertiary">
