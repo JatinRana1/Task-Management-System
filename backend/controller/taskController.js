@@ -1,5 +1,4 @@
 const Task = require('../model/taskModel'); // Assuming your model is defined in a file named task.js
-const notifier = require('node-notifier');
 
 // Create task
 exports.createTask = async (req, res) => {

@@ -42,9 +42,9 @@ const TaskAdd = () => {
   });
 
   return (
-    <div className="container mt-5">
+    <div className="container my-4">
       <form onSubmit={handleSubmit}>
-        <div className="card">
+        <div className="card" style={{backgroundColor: "#D8EFD3"}}>
           <div className="card-body">
             <div className="row mb-3">
               <div className="col-md-6">
@@ -53,6 +53,7 @@ const TaskAdd = () => {
                   className={`form-control ${
                     touched.title && errors.title ? "is-invalid" : ""
                   }`}
+                  style={{ backgroundColor: "#FFFFFF" }}
                   placeholder="Enter title..."
                   name="title"
                   onChange={handleChange}
@@ -71,6 +72,7 @@ const TaskAdd = () => {
                       ? "is-invalid"
                       : ""
                   }`}
+                  style={{ backgroundColor: "#FFFFFF" }}
                   placeholder="Enter description..."
                   name="description"
                   onChange={handleChange}
@@ -85,7 +87,6 @@ const TaskAdd = () => {
 
             <div className="row mb-3">
               <div className="col-md-6">
-                <div className="input-group">
                   <DatePicker
                     name="deadline"
                     selected={values.deadline}
@@ -93,7 +94,10 @@ const TaskAdd = () => {
                     className={`form-control ${
                       touched.deadline && errors.deadline ? "is-invalid" : ""
                     }`}
-                    placeholderText="Set due date"
+                    showTimeSelect  
+                    dateFormat="Pp"
+                    placeholderText="Set deadline"
+                    autoComplete="off"
                   />
                   {touched.deadline && errors.deadline ? (
                     <div className="invalid-feedback d-block">
@@ -101,18 +105,18 @@ const TaskAdd = () => {
                     </div>
                   ) : null}
                 </div>
-              </div>
               <div className="col-md-6">
                 <select
                   name="status"
                   className={`form-select ${
                     touched.status && errors.status ? "is-invalid" : ""
                   }`}
+                  style={{ backgroundColor: "#FFFFFF"}}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.status}
                 >
-                  <option defaultValue={""} label="Select status" />
+                  <option defaultValue={""} label="Select status"/>
                   <option value="Pending" label="Pending" />
                   <option value="In Progress" label="In Progress" />
                   <option value="Completed" label="Completed" />
@@ -124,8 +128,8 @@ const TaskAdd = () => {
             </div>
 
             <div className="row">
-              <div className="d-flex justify-content-center text-end mt-3">
-                <button type="submit" className="btn btn-primary">
+              <div className="d-flex justify-content-end text-end">
+                <button type="submit" className="btn fw-bold primaryBtn" style={{backgroundColor: "#95D2B3", color: "#F1F8E8", border: "2px solid #F1F8E8"}}>
                   Add Task
                 </button>
               </div>

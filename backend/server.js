@@ -2,8 +2,9 @@ const express = require('express');
 const sequelize = require('./connection/connection');
 const taskRouter = require('./route/taskRoute');
 const cors = require('cors');
-const { checkTaskNotification } = require('./notification/notification');
-const cron = require('node-cron');
+// const socketIo = require('socket.io');
+// const http = require('http');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -22,12 +23,21 @@ app.get('/', (req, res) => {
     res.json({message:'Hello, World!'});
 })
 
-// Schedule the check to run every 10 seconds
-// cron.schedule('*/10 * * * * *', checkTaskNotification);
+// Create http server and attaching Socket.io to it
+// const server = http.createServer(app);
+// const io = socketIo(server);
 
-// const interval = setInterval(()=>{
-//   checkTaskNotification()
-// }, 10000)
+// io.on('connection', (socket)=>{
+
+//   socket.on('sendNotification', (message) => {
+//     io.emit('receiveNotification', message);
+//   });
+
+//   socket.on('disconnect', ()=>{
+//     console.log('A user disconnected');
+//   })
+// });
+
 
 // Sync the model with the database
 sequelize.sync()

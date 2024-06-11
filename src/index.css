@@ -1,48 +1,76 @@
-#list1 .form-control {
-    border-color: transparent;
-  }
-  #list1 .form-control:focus {
-    border-color: transparent;
-    box-shadow: none;
-  }
-  #list1 .select-input.form-control[readonly]:not([disabled]) {
-    background-color: #fbfbfb;
-  }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
 
-  .task-header {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    align-items: center;
-    border-bottom: 2px solid #000;
-    padding: 10px 0;
-  }
-  
-  .task-row {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .task-item {
-    padding: 0 15px;
-  }
-  
-  .task-title {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .task-status,
-  .task-deadline,
-  .task-createdAt,
-  .task-actions {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .bg-body-tertiary {
-    background-color: #eff1f2;
-  }
-  
+::-webkit-scrollbar-track {
+  background: #95d2b3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d8efd3;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d8efd3;
+}
+
+#list1 .form-control {
+  border-color: transparent;
+  background-color: #FFFFFF ;
+}
+#list1 .form-control:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+#list1 .select-input.form-control[readonly]:not([disabled]) {
+  background-color: #fbfbfb;
+}
+
+.task-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  border-bottom: 2px solid #f1f8e8;
+  padding: 10px 0;
+}
+
+.task-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-item {
+  padding: 0 15px;
+}
+
+.task-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-status,
+.task-deadline,
+.task-createdAt,
+.task-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.bg-body-tertiary {
+  background-color: #eff1f2;
+}
+
+.primaryBtn:hover {
+  background-color: #D8EFD3 !important;
+  border-color: #55AD9B !important;
+  color: #55AD9B !important;
+}
+
+.react-datepicker-wrapper{
+  display: block !important;
+}
