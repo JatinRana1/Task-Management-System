@@ -12,9 +12,9 @@ export const GlobalContextProvider = ({ children }) => {
 
   // Function to fetch global data
   const getGlobalData = async () => {
-    setLoading(true);
-    setError(null);
     try {
+      setLoading(true);
+      setError(null);
       const { data } = await axios.get('http://localhost:4000/task/all');
       setGlobalData(data);
     } catch (err) {
