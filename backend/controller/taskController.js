@@ -1,4 +1,4 @@
-const Task = require('../model/taskModel'); // Assuming your model is defined in a file named task.js
+const Task = require('../model/taskModel');
 
 // Create task
 exports.createTask = async (req, res) => {

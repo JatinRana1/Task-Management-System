@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 5px;
@@ -18,19 +25,21 @@
 
 #list1 .form-control {
   border-color: transparent;
-  background-color: #FFFFFF ;
+  background-color: #FFFFFF;
 }
+
 #list1 .form-control:focus {
   border-color: transparent;
   box-shadow: none;
 }
+
 #list1 .select-input.form-control[readonly]:not([disabled]) {
   background-color: #fbfbfb;
 }
 
 .task-header {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
   align-items: center;
   border-bottom: 2px solid #f1f8e8;
   padding: 10px 0;
@@ -38,7 +47,7 @@
 
 .task-row {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
   align-items: center;
   padding: 10px 0;
   border-bottom: 1px solid #ccc;
@@ -55,8 +64,7 @@
 
 .task-status,
 .task-deadline,
-.task-createdAt,
-.task-actions {
+.task-createdAt {
   display: flex;
   justify-content: center;
 }
@@ -71,6 +79,95 @@
   color: #55AD9B !important;
 }
 
-.react-datepicker-wrapper{
+.react-datepicker-wrapper {
   display: block !important;
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Card styles */
+.card {
+  border: none;
+}
+
+/* .task-header,
+.task-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+} */
+
+.task-item {
+  flex: 1;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.task-title {
+  flex: 3;
+}
+
+/* Image styles */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Button styles */
+button {
+  cursor: pointer;
+}
+.task-action{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: row;
+}
+/* Mobile View */
+@media (max-width: 768px) {
+  
+  .task-action{
+    justify-content: center;
+  }
+
+  .task-header{
+    display: none;
+  }
+  .task-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .task-item,
+  .task-row .task-item {
+    flex: none;
+    padding: 5px 0;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .task-title h2 {
+    font-size: 1.25rem;
+  }
+
+  .task-title{
+    width: 70%;
+  }
+
+  .task-status p,
+  .task-deadline p,
+  .task-createdAt p {
+    text-align: left;
+  }
+
 }

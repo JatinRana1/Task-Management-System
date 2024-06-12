@@ -12,7 +12,7 @@ const Homepage = () => {
 
   return (
     <section className="vh-100" style={{ backgroundColor: "#D8EFD3" }}>
-      <div className="container py-5">
+      <div className="container">
         <div className="row d-flex justify-content-center align-items-center">
           <div className="col">
             <div
@@ -68,7 +68,7 @@ const Homepage = () => {
                     </div>
                   </div>
                 )}
-                <div style={{ height: "300px", overflow: "auto" }}>
+                <div style={{ height: "40vh", overflow: "auto" }}>
                   {globalData &&
                     globalData.map((data, index) => {
                       // Parse the createdAt and deadline datetime strings
@@ -145,8 +145,8 @@ const Homepage = () => {
                               {`${createdAtFormattedDate}`}
                             </p>
                           </div>
-                          <div className="task-item task-actions">
-                            <div className="d-flex flex-row justify-content-end mb-1">
+                          <div className="task-item ">
+                            <div className="task-action mb-1">
                               <button
                                 className="btn btn-md btn-outline-danger me-2"
                                 title="Delete"
